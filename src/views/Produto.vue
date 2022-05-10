@@ -2,7 +2,9 @@
 	<div class="col-lg-3 col-md 6 col-9 mx-auto my-3">
 		<div class="card">
 			<div class="img-container py-5">
-				<router-link to="/detalhes"><img src="" alt="" class="card-img-top"></router-link>
+				<router-link to="/detalhes">
+				    <img src="" alt="" class="card-img-top">
+				</router-link>
 				<button class="card-btn">
 					<p class="mb-0">No Carrinho</p>
 					<i class="fas fa-cardt-plus" />

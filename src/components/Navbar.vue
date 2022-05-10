@@ -1,7 +1,7 @@
 <template>
 	<NavWrapper class="navbar navbar-expand-sm navbar-dark px-sm-5">
 		<router-link to="/">
-        <img src="" alt="" class="myLogo navbar-brand">
+        <img src="" alt="" class="meuLogo navbar-brand">
 		</router-link>
 
 		<ul class="navbar-nav align-items-center">
@@ -9,7 +9,7 @@
 				<router-link to="/" class="nav-link"></router-link>
 			</li>
 		</ul>
-		<router-link to="/">
+		<router-link to="/" class="ml-auto">
 			<ButtonContainer>
 				<span class="mr-2">
 					<i class="fas fa-cart-plus"></i>
@@ -42,3 +42,9 @@ export default {
 
 }
 </script>
+<style scoped>
+     .meuLogo {
+        height: 3.9rem;
+        width: 5rem;
+    }
+</style>
