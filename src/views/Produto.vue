@@ -5,9 +5,9 @@
 				<router-link to="/detalhes">
 				<img v-bind:src="produto.imgUrl" alt="produto" class="card-img-top">
 				</router-link>
-				<button class="card-btn" v-on:click="abrirModal(produto.id)">
-					<p class="mb-0">No Carrinho</p>
-					<i class="fas fa-cardt-plus" />
+				<button class="card-btn" v-bind:disabled="produto.noCarrinho" v-on:click="addNoCarrinho(produto.id); abrirModal(produto.id)">
+					<p class="mb-0" v-if="produto.noCarrinho">No Carrinho</p>
+					<i v-else class="fas fa-cardt-plus" />
 				</button>
 			</div>
 			<div class="card-footer d-flex justify-content-between">
@@ -25,7 +25,8 @@ export default {
 	methods: {
 		...mapActions([
 			'handelDetalhe',
-			'abrirModal'
+			'abrirModal',
+            'addNoCarrinho'
 		])
 	}
 }

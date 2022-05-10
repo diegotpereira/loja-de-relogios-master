@@ -44,6 +44,10 @@ export default new Vuex.Store({
         },
         handelDetalhe: (state, detalheProduto) => {
             state.detalheProduto = detalheProduto
+        },
+        addNoCarrinho: (state, payload) => {
+            state.produtos = payload.tempProdutos
+            state.carrinho = [...state.carrinho, payload.produto]
         }
     },
     actions: {
@@ -90,6 +94,29 @@ export default new Vuex.Store({
         },
         fecharModal: ({ commit }) => {
             commit('fecharModal')
+        },
+        addNoCarrinho: ({ commit, dispatch, state }, id) => {
+            let tempProdutos = [...state.produtos]
+
+            state.produtos.forEach((item) => {
+                const unicoItem = {...item }
+                tempProdutos = [...tempProdutos, unicoItem]
+            })
+            let index = tempProdutos.findIndex(produto => produto.id === id)
+            let produto = tempProdutos[index]
+
+            produto.noCarrinho = true
+            produto.contar = 1
+            produto.total = produto.preco
+
+            let p = new Promise((resolve) => {
+                resolve(commit('addNoCarrinho', { tempProdutos: tempProdutos, produto: produto }))
+            })
+            p.then(() => {
+                dispatch('addTotal')
+            }).then(() => {
+                dispatch('salvarCarrinhoNoBrowser')
+            })
         }
     }
 })
