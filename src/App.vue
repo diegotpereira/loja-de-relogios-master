@@ -1,11 +1,11 @@
 <template>
     <div id="app">
-        <Navbar />
-        <div class="conditional-content">
-            <router-view />
-			<Modal />
-        </div>
-		<Footer />
+      <Navbar />
+      <div class="conditional-content">
+        <router-view />
+        <Modal />
+      </div>
+      <Footer />
     </div>
 </template>
 <script>
@@ -22,9 +22,12 @@ export default {
 	},
 	components: {
 		Navbar,
+    Modal,
 		Footer,
-		Modal
-	}
+	},
+  created() {
+    this.$store.dispatch('setProdutos')
+  }
 }
 </script>
 

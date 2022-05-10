@@ -1,7 +1,7 @@
 <template>
 	<NavWrapper class="navbar navbar-expand-sm navbar-dark px-sm-5">
 		<router-link to="/">
-        <img src="" alt="" class="meuLogo navbar-brand">
+        <img v-bind:src="logo" alt="" class="meuLogo navbar-brand">
 		</router-link>
 
 		<ul class="navbar-nav align-items-center">
@@ -20,6 +20,8 @@
 	</NavWrapper>
 </template> 
 <script>
+import logo from '../logo.svg'
+
 import styled from 'vue-styled-components'
 import { ButtonContainer } from '../styledComponentButtons'
 
@@ -32,7 +34,7 @@ export default {
 	name: 'Navbar',
 	data() {
 		return {
-			
+			logo: logo
 		}
 	},
 	components: {

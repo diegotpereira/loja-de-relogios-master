@@ -1,9 +1,9 @@
 <template>
 	<div class="py-5">
 		<div class="container">
-		<Titulo name="Our" title="Coleções" />
+		<Titulo name="Sua" title="Coleção" />
 		<div class="row">
-			<Produto />
+			<Produto v-for="(produto, index) in produtos" :key="index" v-bind:produto="produto"/>
 		</div>
 	</div>
 	</div>
@@ -11,6 +11,7 @@
 <script>
 import Titulo from '../components/Titulo.vue'
 import Produto from './Produto.vue'
+import { mapGetters } from 'vuex'
 
 export default {
 	name: "ListaCompras" ,
@@ -23,5 +24,10 @@ export default {
 		Titulo,
 		Produto
 	},
+	computed: {
+		...mapGetters([
+			'produtos'
+		])
+	}
 }
 </script>
