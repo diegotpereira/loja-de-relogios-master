@@ -6,7 +6,7 @@
 
 		<ul class="navbar-nav align-items-center">
 			<li class="nav-item ml-5">
-				<router-link to="/" class="nav-link"></router-link>
+				<router-link to="/" class="nav-link">Relógios</router-link>
 			</li>
 		</ul>
 		<router-link to="/" class="ml-auto">
@@ -25,7 +25,7 @@ import logo from '../logo.svg'
 import styled from 'vue-styled-components'
 import { ButtonContainer } from '../styledComponentButtons'
 
-const NavWrapper  = styled.nav `background:var(--mainVue)
+const NavWrapper  = styled.nav`background:var(--mainVue)
 .nav-link {
 	color: var(--mainWhite) !important
 	font-size: 1.5rem
