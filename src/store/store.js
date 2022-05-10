@@ -41,6 +41,9 @@ export default new Vuex.Store({
         },
         fecharModal: (state) => {
             state.modalAberto = false
+        },
+        handelDetalhe: (state, detalheProduto) => {
+            state.detalheProduto = detalheProduto
         }
     },
     actions: {
@@ -67,7 +70,7 @@ export default new Vuex.Store({
         },
         handelDetalhe: ({ commit, state }, id) => {
             let produto = state.produtos.find(produto => produto.id === id)
-            commit('handleDetalhe', produto)
+            commit('handelDetalhe', produto)
 
             let index = state.produtos.findIndex(produto => produto.id === id)
             localStorage.setItem('detalheProdutoIndex', index)
@@ -78,7 +81,7 @@ export default new Vuex.Store({
                 return
             } else {
                 const index = localStorage.getItem('detalheProdutoIndex')
-                commit('handleDetalhe', state.produtos[index])
+                commit('handelDetalhe', state.produtos[index])
             }
         },
         abrirModal: ({ commit, state }, id) => {
