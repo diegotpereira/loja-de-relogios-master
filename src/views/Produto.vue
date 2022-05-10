@@ -25,7 +25,7 @@ export default {
 	methods: {
 		...mapActions([
 			'handelDetalhe',
-			// 'abrirModal'
+			'abrirModal'
 		])
 	}
 }
