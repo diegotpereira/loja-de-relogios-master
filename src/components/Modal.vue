@@ -9,7 +9,7 @@
                             <img v-bind:src="modalProduto.imgUrl" alt="Produto Imagem" class="img-fluid">
                             <h5>{{modalProduto.titulo}}</h5>
                             <h5 class="text-muted">Preço: R$ {{modalProduto.preco}}</h5>
-                            <router-link >
+                            <router-link v-bind:to="$route.path">
                                 <ButtonContainerDark v-on:click="onFecharModal()">
                                     Continue Comprando
                                 </ButtonContainerDark>
