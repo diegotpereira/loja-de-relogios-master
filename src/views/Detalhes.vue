@@ -13,6 +13,8 @@
                     <h4 class="text-muted">Preço: R$ {{detalheProduto.preco}}</h4>
                     <p class="mt-3 mb-0"><u><b>Produto Informação:</b></u></p>
                     <p class="text-muted">{{detalheProduto.info}}</p>
+
+                    {{/*Buttons*/}}
                     <div>
                         <router-link to="/">
                             <ButtonContainerDark>

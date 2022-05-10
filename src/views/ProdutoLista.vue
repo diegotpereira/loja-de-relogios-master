@@ -1,6 +1,6 @@
 <template>
 	<div class="py-5">
-		<div class="container">
+	<div class="container">
 		<Titulo name="Sua" title="Coleção" />
 		<div class="row">
 			<Produto v-for="(produto, index) in produtos" :key="index" v-bind:produto="produto"/>

@@ -1,31 +1,35 @@
 <template>
-	<transition name="meuModal" type="animation"> 
-		<div class="ModalContainer" v-if="$store.state.modalAberto">
-			<div class="container">
-				<div class="row">
-					<div class="col-8 col-md-6 col-lg-4 p-5 mx-auto text-center" id="modal">
-						<h5>Item adicionado ao Carrinho</h5>
-						<img v-bind:src="modalProduto.imgUrl" alt="Produto Imagem" class="img-fluid">
-						<h5>{{modalProduto.titulo}}</h5>
-						<h5 class="text-muted">Preço: R$ {{modalProduto.preco}}</h5>
-						<router-link >
-							<ButtonContainerDark v-on:click="onFecharModal()">
-								Continue Comprando
-							</ButtonContainerDark>
-						</router-link>
-						<router-link to="/carrinho">
-							<ButtonContainerDark v-on:click="onFecharModal()">
-								Ir para o Carrinho
-							</ButtonContainerDark>
-						</router-link>
-					</div>
-				</div>
-			</div>
-		</div>
-	</transition>
+    <span>
+        <transition name="meuModal" type="animation"> 
+            <div class="ModalContainer" v-if="$store.state.modalAberto">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-8 col-md-6 col-lg-4 p-5 mx-auto text-center" id="modal">
+                            <h5>Item adicionado ao Carrinho</h5>
+                            <img v-bind:src="modalProduto.imgUrl" alt="Produto Imagem" class="img-fluid">
+                            <h5>{{modalProduto.titulo}}</h5>
+                            <h5 class="text-muted">Preço: R$ {{modalProduto.preco}}</h5>
+                            <router-link >
+                                <ButtonContainerDark v-on:click="onFecharModal()">
+                                    Continue Comprando
+                                </ButtonContainerDark>
+                            </router-link>
+                            <router-link to="/carrinho">
+                                <ButtonContainerDark v-on:click="onFecharModal()">
+                                    Ir para o Carrinho
+                                </ButtonContainerDark>
+                            </router-link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </transition>
+        <BackDrop :show="$store.state.modalAberto" :key="$store.state.modalAberto" /> 
+    </span>
 </template>
 <script>
 import { ButtonContainerDark } from '../styledComponentButtons'
+import BackDrop from './Backdrop.vue'
 
 export default {
 	name: 'Modal',
@@ -35,7 +39,8 @@ export default {
 		}
 	},
 	components: {
-		ButtonContainerDark
+		ButtonContainerDark,
+        BackDrop
 	},
 	computed: {
 		modalProduto() {

@@ -9,7 +9,7 @@
 				<router-link to="/" class="nav-link">Relógios</router-link>
 			</li>
 		</ul>
-		<router-link to="/" class="ml-auto">
+		<router-link to="/carrinho" class="ml-auto">
 			<ButtonContainer>
 				<span class="mr-2">
 					<i class="fas fa-cart-plus"></i>
@@ -20,8 +20,7 @@
 	</NavWrapper>
 </template> 
 <script>
-import logo from '../logo.svg'
-
+import logo from '../img/logo.svg'
 import styled from 'vue-styled-components'
 import { ButtonContainer } from '../styledComponentButtons'
 
