@@ -25,11 +25,13 @@ import logo from '../logo.svg'
 import styled from 'vue-styled-components'
 import { ButtonContainer } from '../styledComponentButtons'
 
-const NavWrapper  = styled.nav`background:var(--mainVue)
-.nav-link {
-	color: var(--mainWhite) !important
-	font-size: 1.5rem
-}`
+const NavWrapper  = styled.nav`
+		background:var(--mainVue)
+		.nav-link {
+			color: var(--mainWhite) !important;
+			font-size: 1.5rem;
+		}
+	`
 export default {
 	name: 'Navbar',
 	data() {

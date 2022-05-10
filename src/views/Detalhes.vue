@@ -13,17 +13,17 @@
                     <h4 class="text-muted">Preço: R$ {{detalheProduto.preco}}</h4>
                     <p class="mt-3 mb-0"><u><b>Produto Informação:</b></u></p>
                     <p class="text-muted">{{detalheProduto.info}}</p>
-                </div>
-                <div>
-                    <router-link to="/">
-                        <ButtonContainerDark>
-                            Voltar para Produtos
-                        </ButtonContainerDark>
+                    <div>
+                        <router-link to="/">
+                            <ButtonContainerDark>
+                                Voltar para Produtos
+                            </ButtonContainerDark>
+                        </router-link>
                         <ButtonContainerDark>
                             <span>No Carrinho</span>
                             <span>Add No Carrinho</span>
                         </ButtonContainerDark>
-                    </router-link>
+                    </div>
                 </div>
             </div>
         </div>

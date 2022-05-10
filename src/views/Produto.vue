@@ -5,7 +5,7 @@
 				<router-link to="/detalhes">
 				<img v-bind:src="produto.imgUrl" alt="produto" class="card-img-top">
 				</router-link>
-				<button class="card-btn">
+				<button class="card-btn" v-on:click="abrirModal(produto.id)">
 					<p class="mb-0">No Carrinho</p>
 					<i class="fas fa-cardt-plus" />
 				</button>
