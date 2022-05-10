@@ -1,7 +1,6 @@
 import styled from 'vue-styled-components'
 
-export const ButtonContainer = styled.button +
-    `
+export const ButtonContainer = styled.button `
     background:transparent;
     font-size:1.2rem;
     border:0.05rem solid var(--mainWhite);
