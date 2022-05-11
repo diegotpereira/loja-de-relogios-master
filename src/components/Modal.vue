@@ -74,14 +74,14 @@ export default {
 
     .meuModal-enter {}
     .meuModal-enter-active {
-        animation: openModal 0.4s ease-out forwards;
+        animation: abrirModal 0.4s ease-out forwards;
     }
     .meuModal-leave {}
     .meuModal-leave-active {
-        animation: closeModal 0.7s ease-out forwards;
+        animation: fecharModal 0.7s ease-out forwards;
     }
 
-    @keyframes openModal {
+    @keyframes abrirModal {
         0%{
             opacity: 0;
             transform: translateY(-200%);
@@ -95,7 +95,7 @@ export default {
             transform: translateY(0%);
         }
     }
-    @keyframes closeModal {
+    @keyframes fecharModal {
         0%{
             opacity: 1;
             transform: translateY(0);
