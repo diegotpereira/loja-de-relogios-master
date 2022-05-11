@@ -14,7 +14,7 @@ export default new Vuex.Store({
         modalAberto: false,
         modalProduto: null,
         carrinhoSubTotal: 0,
-        carrrinhoTax: 0,
+        carrinhoTax: 0,
         carrinhoTotal: 0
     },
     getters: {
@@ -37,6 +37,13 @@ export default new Vuex.Store({
         },
         handelDetalhe: (state, detalheProduto) => {
             state.detalheProduto = detalheProduto
+        },
+        CarregarCarrinhoAoRecarregar: (state, payload) => {
+            state.produtos = payload.tempProdutos
+            state.carrinho = payload.tempCarrinho
+            state.carrinhoSubTotal = payload.carrinhoSubTotal
+            state.carrinhoTax = payload.carrinhoTax
+            state.carrinhoTotal = payload.carrinhoTotal
         },
         addNoCarrinho: (state, payload) => {
             state.produtos = payload.tempProdutos
@@ -67,7 +74,7 @@ export default new Vuex.Store({
         limparCarrinho: (state, tempProdutos) => {
             state.produtos = tempProdutos
             state.carrinhoSubTotal = 0
-            state.carrrinhoTax = 0
+            state.carrinhoTax = 0
             state.carrinhoTotal = 0
             state.carrinho = []
         }
@@ -221,7 +228,7 @@ export default new Vuex.Store({
             const StringCarrinho = JSON.stringify(state.carrinho)
             localStorage.setItem('carrinho', StringCarrinho)
             localStorage.setItem('carrinhoSubTotal', state.carrinhoSubTotal)
-            localStorage.setItem('carrinhoTax', state.carrrinhoTax)
+            localStorage.setItem('carrinhoTax', state.carrinhoTax)
             localStorage.setItem('carrinhoTotal', state.carrinhoTotal)
         },
         limparBrowserStorage() {
