@@ -38,21 +38,21 @@ export default new Vuex.Store({
         handelDetalhe: (state, detalheProduto) => {
             state.detalheProduto = detalheProduto
         },
-        CarregarCarrinhoAoRecarregar: (state, payload) => {
-            state.produtos = payload.tempProdutos
-            state.carrinho = payload.tempCarrinho
-            state.carrinhoSubTotal = payload.carrinhoSubTotal
-            state.carrinhoTax = payload.carrinhoTax
-            state.carrinhoTotal = payload.carrinhoTotal
+        CarregarCarrinhoAoRecarregar: (state, payLoad) => {
+            state.produtos = payLoad.tempProdutos
+            state.carrinho = payLoad.tempCarrinho
+            state.carrinhoSubTotal = payLoad.carrinhoSubTotal
+            state.carrinhoTax = payLoad.carrinhoTax
+            state.carrinhoTotal = payLoad.carrinhoTotal
         },
-        addNoCarrinho: (state, payload) => {
-            state.produtos = payload.tempProdutos
-            state.carrinho = [...state.carrinho, payload.produto]
+        addNoCarrinho: (state, payLoad) => {
+            state.produtos = payLoad.tempProdutos
+            state.carrinho = [...state.carrinho, payLoad.produto]
         },
-        addTotal: (state, payload) => {
-            state.carrinhoSubTotal = payload.subTotal
-            state.carrinhoTax = payload.tempTax
-            state.carrinhoTotal = payload.total
+        addTotal: (state, payLoad) => {
+            state.carrinhoSubTotal = payLoad.subTotal
+            state.carrinhoTax = payLoad.tempTax
+            state.carrinhoTotal = payLoad.total
         },
         abrirModal: (state, modalProduto) => {
             state.modalProduto = modalProduto
@@ -67,9 +67,9 @@ export default new Vuex.Store({
         decremento: (state, carrinho) => {
             state.carrinho = carrinho
         },
-        removerItem: (state, payload) => {
-            state.produtos = payload.produtos
-            state.carrinho = payload.carrinho
+        removerItem: (state, payLoad) => {
+            state.produtos = payLoad.produtos
+            state.carrinho = payLoad.carrinho
         },
         limparCarrinho: (state, tempProdutos) => {
             state.produtos = tempProdutos
@@ -176,7 +176,7 @@ export default new Vuex.Store({
 
             let total = subTotal + tempTax
 
-            commit('addTotal', { subTotal, tempTax: tempTax, total: total })
+            commit('addTotal', { subTotal: subTotal, tempTax: tempTax, total: total })
         },
         abrirModal: ({ commit, state }, id) => {
             const modalProduto = state.produtos.find(produto => produto.id === id)

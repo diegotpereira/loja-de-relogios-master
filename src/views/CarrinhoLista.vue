@@ -1,6 +1,6 @@
 <template>
     <div>
-        <CarrinhoItem />
+        <CarrinhoItem v-for="(item, index) in carrinho" v-bind:item="item" :key="index"/>
     </div>
 </template>
 <script>

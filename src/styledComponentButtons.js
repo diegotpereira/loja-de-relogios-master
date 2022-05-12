@@ -18,8 +18,7 @@ export const ButtonContainer = styled.button `
     }      
 `
 const btnProps = { carrinho: Boolean };
-export const ButtonContainerDark = styled('button', btnProps) +
-    `
+export const ButtonContainerDark = styled('button', btnProps)`
     background:${props => props.cart ? 'var(--mainWhite)' : 'var(--mainVue)'};
     font-size:1.2rem;
     border:0.05rem solid var(--mainWhite);

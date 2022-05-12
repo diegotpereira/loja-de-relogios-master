@@ -17,13 +17,13 @@
                     {{/*Buttons*/}}
                     <div>
                         <router-link to="/">
-                            <ButtonContainerDark>
+                            <ButtonContainerDark carrinho v-bind:disabled="detalheProduto.noCarrinho" v-on:click="addNoCarrinho(detalheProduto.id); abrirModal(detalheProduto.id)">
                                 Voltar para Produtos
                             </ButtonContainerDark>
                         </router-link>
                         <ButtonContainerDark>
-                            <span>No Carrinho</span>
-                            <span>Add No Carrinho</span>
+                            <span v-if="detalheProduto.noCarrinho">No Carrinho</span>
+                            <span v-else>Add No Carrinho</span>
                         </ButtonContainerDark>
                     </div>
                 </div>
@@ -52,7 +52,8 @@ export default {
     },
     methods: {
         ...mapActions([
-            'abrirModal'
+            'abrirModal',
+            'addNoCarrinho'
         ])
     }
 }
