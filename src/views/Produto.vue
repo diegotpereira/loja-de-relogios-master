@@ -5,14 +5,14 @@
 				<router-link to="/detalhes">
 				<img v-bind:src="produto.imgUrl" alt="produto" class="card-img-top">
 				</router-link>
-				<button class="card-btn" v-bind:disabled="produto.noCarrinho" v-on:click="addNoCarrinho(produto.id); abrirModal(produto.id)">
+				<button class="cart-btn" v-bind:disabled="produto.noCarrinho" v-on:click="addNoCarrinho(produto.id); abrirModal(produto.id)">
 					<p class="mb-0" v-if="produto.noCarrinho">No Carrinho</p>
-					<i v-else class="fas fa-cardt-plus" />
+					<i v-else class="fas fa-cart-plus" />
 				</button>
 			</div>
 			<div class="card-footer d-flex justify-content-between">
 				<p class="align-self-center mb-0">{{produto.titulo}}</p>
-				<h5 class="text-vue mb-0"><div class="mr-1">R$</div>{{produto.preco}}</h5>
+				<h5 class="text-vue mb-0"><span class="mr-1">R$</span>{{produto.preco}}</h5>
 			</div>
 		</div>
 	</div>

@@ -27,8 +27,8 @@ export default {
     data() {
         return {
             credentials: {
-                sandbox: process.env.VUE_APP_PAYPAL_ID,
-                production: 'YOUR-PRODUCTION-APP-ID'
+                sandbox: 'AT_SG-5urElVDmJ28jiKJReRxRKdN2U56KvjE_uQvMoV3fQxFU1DA6sL1Zv1AcjQTt5rUPFNocb3Hz0_',
+                production: 'AT_SG-5urElVDmJ28jiKJReRxRKdN2U56KvjE_uQvMoV3fQxFU1DA6sL1Zv1AcjQTt5rUPFNocb3Hz0_'
             }
         }
     },
